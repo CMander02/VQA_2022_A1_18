@@ -57,10 +57,10 @@ By click the "Push to Ask", demo will take the picture of the water bottle, then
 
 [2]Li, J., Li, D., Xiong, C., & Hoi, S. (2022). Blip: Bootstrapping language-image pre-training for unified vision-language understanding and generation. arXiv preprint arXiv:2201.12086.
 
+```python
 @inproceedings{li2022blip,
       title={BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation}, 
       author={Junnan Li and Dongxu Li and Caiming Xiong and Steven Hoi},
       year={2022},
-      booktitle={ICML},
-}
-
+      booktitle={ICML},}
+```
