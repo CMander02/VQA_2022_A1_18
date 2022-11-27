@@ -1,12 +1,21 @@
 # EC_601_Project_VQA
 ## Introduction
-Visual Question Answering (VQA) is the system that combines Knowledge Representation & Reasoning, Computer Vision, and Natural Language Processing. [1] In this system, it takes images and natural language as input and gives the natural language answers as output. VQA could be very helpful when it is applied to scenarios of object detections or acquisition of information. However, VQA tasks could be challenging due to the size of datasets and some other factors.
+Visual Question Answering (VQA) is the system that combines Knowledge Representation & Reasoning, Computer Vision, and Natural Language Processing. [1] In this system, it takes images and natural language as input and gives the natural language answers as output. VQA could be very helpful when it is applied to scenarios of object detections or acquisition of information. 
 
 ## Application
 Visual Question Answering has been widely used in different real-life areas. The most direct application is to help visually impaired persons; thus, they could ask questions by just taking photos. Also, it could be used in the medical or biological field by detecting X-rays or some other medical images to tell information.
 
-## Product MVP
+## Users and Product MVP
+Our main users are people with vision imparity.
+
 Asking the VQA product question in voice with an image, model is able to give you the answer in voice.
+
+A man get blind in a sudden, and he became unfamiliar with the world around him.
+With our work, he can understand his situation in a more convenient way, and “see” the world again.
+
+A user want to figure out the situation in a certain picture, and VQA will help to find out.
+
+
 
 ## Demo Structure
 Next, this is the structure of VQA demo. Our demo supports conversion between text and speech by gTTS. There are two inputs, speech (question) and image, by using gTTS, the speech will transfer to text. Model takes text and image as input, giving text (answer) as output. Then the text output will be trasferred to speech (answer).
@@ -33,7 +42,7 @@ model, vis_processors, txt_processors = load_model_and_preprocess(name="blip_vqa
 
 ## GUI tutorial:
 
-Our GUI supports Windows 11 operating systems. By click the "Push to Ask", the front camera of computer will take the image as input, then you need to speak to ask questions. The demo will speak the answers to you. At the same time, demo will automatically record the history of your question, answers given by model, and time. The demo image is shown below:
+Our GUI supports Windows 11 operating system. By click the "Push to Ask", the front camera of computer will take the image as input, then you need to speak to ask questions. The demo will speak the answers to you. At the same time, demo will automatically record the history of your question, answers given by model, and time. The demo image is shown below:
 
 ![image](https://github.com/CMander02/VQA_2022_A1_18/blob/main/GUI_image.png)
 
