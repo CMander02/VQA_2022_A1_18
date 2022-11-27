@@ -5,29 +5,53 @@ Visual Question Answering (VQA) is the system that combines Knowledge Representa
 ## Application
 Visual Question Answering has been widely used in different real-life areas. The most direct application is to help visually impaired persons; thus, they could ask questions by just taking photos. Also, it could be used in the medical or biological field by detecting X-rays or some other medical images to tell information.
 
-### Product MVP
-Asking the model question in voice with an image, model is able to give you the answer in voice.
+## Product MVP
+Asking the VQA product question in voice with an image, model is able to give you the answer in voice.
 
-### Demo Structure
-Next, this is the structure of VQA demo. 
+## Demo Structure
+Next, this is the structure of VQA demo. Our demo supports conversion between text and speech by gTTS
+
+![image](https://github.com/CMander02/VQA_2022_A1_18/blob/main/VQA_demo_structure.png)
 
 Figure 1. Demo Structure
 
-## Open-Source Research
-An example of CNN&LSTM combination is the “Deeper LSTM Q + Norm I” from tbmoon Github implemented by Pytorch [3]. Also, the combination of a LSTM channel for question features and a normalized VGGNet for image features shows the best performance. The accuracies of answers are shown as follows:
 
-![image](https://github.com/shiyuhu1933/EC_601_Project1/blob/main/Accuracy.png)
+## Model Structure
+In this VQA product, model is [BLIP](https://github.com/salesforce/BLIP) recaped by Salesforce, Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation [2]. The structure is shown below:
 
-Figure 2. Accuracy of different combinations of models
+![image](https://github.com/CMander02/VQA_2022_A1_18/blob/main/BLIP_model.png)
 
-From the table above, it is obvious that the combination of deeper LSTM Q + norm I has the highest accuracies for both Open-Ended answers and Multiple-Choice answers.
+Figure 1. Structure of BLIP
+Model changed to LAVIS, A Library for Language-Vision Intelligence, which support 2 kinds of VQA models: albef_vqa and blip_vqa
+To change the model, you should change the name from "blip_vqa" to "albef_vqa"
+
+```python
+
+model, vis_processors, txt_processors = load_model_and_preprocess(name="blip_vqa", model_type="aokvqa", is_eval=True,
+                                                                      device=device)
+```
+
+## GUI tutorial:
+
+Our GUI supports Windows 11 operating systems. By click the "Push to Ask", the front camera of computer will take the image as input, then you need to speak to ask questions. The demo will speak the answers to you. At the same time, demo will automatically record the history of your question, answers given by model, and time. The demo image is shown below:
+
+![image](https://github.com/CMander02/VQA_2022_A1_18/blob/main/GUI_image.png)
+
+By click the "Push to Ask", demo will take the picture of the water bottle, then ask the demo "what is in the picture". Demo will speak the anwer "water bottle".
+
+
 
 
 ## References
 
 [1] Antol, S., Agrawal, A., Lu, J., Mitchell, M., Batra, D., Zitnick, C. L., & Parikh, D. (2015). Vqa: Visual question answering. In Proceedings of the IEEE international conference on computer vision (pp. 2425-2433).
 
-[2] T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Dollar, and C. L. Zitnick. Microsoft COCO: Common Objects in ´ Context. In ECCV, 2014. 2, 3, 5, 21
+[2]Li, J., Li, D., Xiong, C., & Hoi, S. (2022). Blip: Bootstrapping language-image pre-training for unified vision-language understanding and generation. arXiv preprint arXiv:2201.12086.
 
-[3]Tbmoon. “Pytorch VQA: Visual Question Answering”. Github, 2019. tbmoon/basic_vqa: Pytorch VQA : Visual Question Answering (https://arxiv.org/pdf/1505.00468.pdf) (github.com) 
+@inproceedings{li2022blip,
+      title={BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation}, 
+      author={Junnan Li and Dongxu Li and Caiming Xiong and Steven Hoi},
+      year={2022},
+      booktitle={ICML},
+}
 
