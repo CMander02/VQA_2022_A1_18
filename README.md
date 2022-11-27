@@ -32,6 +32,8 @@ In this VQA product, model is [BLIP](https://github.com/salesforce/BLIP) recaped
 
 Figure 1. Structure of BLIP
 Model changed to LAVIS, A Library for Language-Vision Intelligence, which support 2 kinds of VQA models: albef_vqa and blip_vqa
+
+
 To change the model, you should change the name from "blip_vqa" to "albef_vqa"
 
 ```python
