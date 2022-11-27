@@ -9,7 +9,7 @@ Visual Question Answering has been widely used in different real-life areas. The
 Asking the VQA product question in voice with an image, model is able to give you the answer in voice.
 
 ## Demo Structure
-Next, this is the structure of VQA demo. Our demo supports conversion between text and speech by gTTS
+Next, this is the structure of VQA demo. Our demo supports conversion between text and speech by gTTS. There are two inputs, speech (question) and image, by using gTTS, the speech will transfer to text. Model takes text and image as input, giving text (answer) as output. Then the text output will be trasferred to speech (answer).
 
 ![image](https://github.com/CMander02/VQA_2022_A1_18/blob/main/VQA_demo_structure.png)
 
