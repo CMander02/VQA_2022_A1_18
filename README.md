@@ -48,7 +48,7 @@ Our GUI supports Windows 11 operating system. By click the "Push to Ask", the fr
 
 ![image](https://github.com/CMander02/VQA_2022_A1_18/blob/main/GUI_image.png)
 
-By click the "Push to Ask", demo will take the picture of the water bottle, then ask the demo "what is in the picture". Demo will speak the anwer "water bottle".
+By clicking the "Push to Ask", demo will take the picture of the water bottle, then ask the demo "what is in the picture". Demo will speak the anwer "water bottle".
 
 
 
